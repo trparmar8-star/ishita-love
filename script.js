@@ -96,23 +96,39 @@ let message = "❤️ Ishita clicked the journey button! Our beautiful journey s
 let botToken = "8098002315:AAElVMVmJp46JMuwrvbTHns30Y8R_t9iAJ8";
 let chatId = "617023587";
 
-let url = "https://api.telegram.org/bot" 
-+ botToken 
-+ "/sendMessage?chat_id=" 
-+ chatId 
-+ "&text=" 
-+ encodeURIComponent(message);
+
+let url =
+`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
 
 
 fetch(url)
 .then(response => response.json())
-
 .then(data => {
 
-console.log(data);
 
 alert("Our journey begins ❤️🧸");
 
+
+let screen = document.getElementById("videoScreen");
+
+screen.classList.add("show");
+
+
+let video = document.getElementById("loveVideo");
+
+video.play();
+
+
+})
+.catch(error => {
+
+console.log(error);
+
+alert("Something went wrong");
+
+});
+
+}
 
 document.getElementById("loveVideo").style.display="block";
 
