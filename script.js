@@ -2,12 +2,16 @@ let music = document.getElementById("music");
 
 function openLetter(){
 
-document.getElementById("envelope").style.display="none";
+let screen = document.getElementById("videoScreen");
 
-document.getElementById("page1").classList.remove("hidden");
+screen.classList.add("show");
 
-music.play().catch(function(error){
-    console.log("Audio blocked:", error);
+document.getElementById("loveVideo").play();
+
+music.play().then(() => {
+    console.log("Music started");
+}).catch(error => {
+    console.log("Music blocked:", error);
 });
 
 typing(
