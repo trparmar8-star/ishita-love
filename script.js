@@ -1,6 +1,4 @@
-
-let music=document.getElementById("music");
-
+let music = document.getElementById("music");
 
 function openLetter(){
 
@@ -8,8 +6,9 @@ document.getElementById("envelope").style.display="none";
 
 document.getElementById("page1").classList.remove("hidden");
 
-
-music.play();
+music.play().catch(function(error){
+    console.log("Audio blocked:", error);
+});
 
 typing(
 " I know I made mistakes... but you are very special to me. I don't want fights, I want your smile ❤️",
@@ -125,3 +124,4 @@ alert("Notification failed");
 });
 
 }
+
