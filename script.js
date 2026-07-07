@@ -2,12 +2,6 @@ let music = document.getElementById("music");
 
 function openLetter(){
 
-let screen = document.getElementById("videoScreen");
-
-screen.classList.add("show");
-
-document.getElementById("loveVideo").play();
-
 music.play().then(() => {
     console.log("Music started");
 }).catch(error => {
@@ -127,21 +121,4 @@ console.log(error);
 alert("Something went wrong");
 
 });
-
-}
-
-document.getElementById("loveVideo").style.display="block";
-
-document.getElementById("loveVideo").play();
-
-})
-.catch(error => {
-
-console.log(error);
-
-alert("Notification failed");
-
-});
-
-}
 
